@@ -48,6 +48,7 @@
     ./plug/ui/telescope.nix
 
     #./plug/utils/harpoon.nix
+    ./plug/utils/auto-session.nix
     ./plug/utils/comment.nix
     ./plug/utils/copilot.nix
     #./plug/utils/flash.nix
