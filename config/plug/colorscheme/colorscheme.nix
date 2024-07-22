@@ -5,7 +5,7 @@ in
 {
   colorschemes = {
     base16 = {
-      enable = true;
+      enable = false;
       setUpBar = false;
       colorscheme = import ../../colors/${config.theme}.nix { };
     };
@@ -16,7 +16,7 @@ in
       };
     };
     tokyonight = {
-      enable = false;
+      enable = true;
       settings = {
         style = "night";
         transparent = true;
