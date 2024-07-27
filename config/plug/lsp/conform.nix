@@ -1,6 +1,6 @@
 {
   plugins.conform-nvim = {
-    enable = true;
+    enable = false;
     formatOnSave = {
       lspFallback = true;
       timeoutMs = 500;
