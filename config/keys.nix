@@ -371,6 +371,14 @@
       action = "<CMD> Grapple select index=4<CR>";
       options = { desc = "Grapple Select 4"; };
     }
+
+    {
+      mode = "n";
+      key = "<leader>onn";
+      action = "<cmd>ObsidianNew<CR>";
+      options = { desc = "New Note"; };
+    }
+
   ];
   extraConfigLua = ''
     function ToggleLineNumber()
