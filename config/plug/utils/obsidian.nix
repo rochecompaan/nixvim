@@ -34,6 +34,10 @@
           action = "require('obsidian').util.toggle_checkbox";
           opts.buffer = true;
         };
+        "<leader>onn" = {
+          action = "<cmd>ObsidianNew<CR>";
+          desc = "New Obsidian Note";
+        };
       };
       templates = {
         subdir = "~/obsidian/templates";
