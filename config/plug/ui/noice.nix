@@ -9,7 +9,7 @@
     };
     lsp = {
       message = {
-        enabled = true;
+        enabled = false;
       };
       progress = {
         enabled = false;
@@ -17,7 +17,7 @@
       };
     };
     popupmenu = {
-      enabled = true;
+      enabled = false;
       backend = "nui";
     };
     format = {
