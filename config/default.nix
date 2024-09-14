@@ -1,5 +1,7 @@
 { config
 , lib
+, inputs
+, pkgs
 , ...
 }: {
   imports = [
@@ -55,7 +57,7 @@
     ./plug/utils/grapple.nix
     ./plug/utils/hardtime.nix
     ./plug/utils/illuminate.nix
-    ./plug/utils/markview.nix
+    # ./plug/utils/markview.nix
     ./plug/utils/mini.nix
     ./plug/utils/nvim-autopairs.nix
     ./plug/utils/obsidian.nix
@@ -79,7 +81,14 @@
     # The base16 theme to use, if you want to use another theme, change it in colorscheme.nix
     theme = "paradise";
     extraConfigLua = ''
-      _G.theme = "${config.theme}"
+      _G.theme = "${config.theme}";
+      require('render-markdown').setup({});
     '';
+    extraPlugins = [
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "markdown.nvim";
+        src = inputs.plugin-markdown;
+      })
+    ];
   };
 }

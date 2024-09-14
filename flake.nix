@@ -12,6 +12,10 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    plugin-markdown = {
+      url = "github:MeanderingProgrammer/markdown.nvim";
+      flake = false;
+    };
   };
 
   outputs =
@@ -19,6 +23,7 @@
     , nixvim
     , flake-parts
     , pre-commit-hooks
+    , plugin-markdown
     , ...
     } @ inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
