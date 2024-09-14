@@ -42,7 +42,7 @@
 
     #./plug/ui/alpha.nix
     ./plug/ui/btw.nix
-    ./plug/ui/bufferline.nix
+    # ./plug/ui/bufferline.nix
     ./plug/ui/indent-blankline.nix
     # ./plug/ui/noice.nix
     # ./plug/ui/nvim-notify.nix
@@ -54,7 +54,7 @@
     ./plug/utils/comment.nix
     ./plug/utils/copilot.nix
     #./plug/utils/flash.nix
-    ./plug/utils/grapple.nix
+    # ./plug/utils/grapple.nix
     ./plug/utils/hardtime.nix
     ./plug/utils/illuminate.nix
     # ./plug/utils/markview.nix
