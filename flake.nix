@@ -40,6 +40,7 @@
           nixvim' = nixvim.legacyPackages.${system};
           nvim = nixvim'.makeNixvimWithModule {
             inherit pkgs;
+            inherit inputs;
             module = ./config;
           };
         in
