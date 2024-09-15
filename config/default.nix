@@ -89,6 +89,7 @@
         src = pkgs.fetchFromGitHub {
           owner = "MeanderingProgrammer";
           repo = "markdown.nvim";
+          rev = "HEAD";
         };
       })
     ];
