@@ -21,9 +21,9 @@
     };
     keymaps = {
       "<leader><space>" = {
-        action = "find_files";
+        action = "buffers";
         options = {
-          desc = "Find project files";
+          desc = "Find buffers";
         };
       };
       "<leader>:" = {
