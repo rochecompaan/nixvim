@@ -90,6 +90,7 @@
           owner = "MeanderingProgrammer";
           repo = "markdown.nvim";
           rev = "HEAD";
+          hash = "sha256-BhITxvogH5hHO5m1SGNP1sT/jMjaQ0uNqg2ScsyZ/pU=";
         };
       })
     ];
