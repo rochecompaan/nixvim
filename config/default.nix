@@ -33,29 +33,21 @@
     ./plug/snippets/luasnip.nix
 
     ./plug/statusline/lualine.nix
-    #./plug/statusline/staline.nix
 
     #./plug/treesitter/treesitter-context.nix
     ./plug/treesitter/treesitter-textobjects.nix
     ./plug/treesitter/treesitter.nix
 
-    #./plug/ui/alpha.nix
     ./plug/ui/btw.nix
-    # ./plug/ui/bufferline.nix
     ./plug/ui/indent-blankline.nix
-    # ./plug/ui/noice.nix
-    # ./plug/ui/nvim-notify.nix
-    #./plug/ui/precognition.nix
     ./plug/ui/telescope.nix
 
     #./plug/utils/harpoon.nix
     ./plug/utils/auto-session.nix
     ./plug/utils/comment.nix
     ./plug/utils/copilot.nix
-    #./plug/utils/flash.nix
     ./plug/utils/hardtime.nix
     ./plug/utils/illuminate.nix
-    # ./plug/utils/markview.nix
     ./plug/utils/mini.nix
     ./plug/utils/nvim-autopairs.nix
     ./plug/utils/obsidian.nix
