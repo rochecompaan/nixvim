@@ -92,6 +92,8 @@
       # vim.opt.conceallevel = 1 in a lua config.
       conceallevel = 1;
 
+      # Sync clipboard between OS and Neovim
+      clipboard = "unnamedplus";
     };
   };
 }
