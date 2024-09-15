@@ -26,55 +26,37 @@
           desc = "Find project files";
         };
       };
-      "<leader>/" = {
-        action = "live_grep";
-        options = {
-          desc = "Grep (root dir)";
-        };
-      };
       "<leader>:" = {
         action = "command_history";
         options = {
           desc = "Command History";
         };
       };
-      "<leader>b" = {
-        action = "buffers";
-        options = {
-          desc = "+buffer";
-        };
-      };
-      "<leader>ff" = {
+      "<leader>sf" = {
         action = "find_files";
         options = {
           desc = "Find project files";
         };
       };
-      "<leader>fr" = {
+      "<leader>sg" = {
         action = "live_grep";
         options = {
           desc = "Find text";
         };
       };
-      "<leader>fR" = {
+      "<leader>sr" = {
         action = "resume";
         options = {
           desc = "Resume";
         };
       };
-      "<leader>fg" = {
+      "<leader>?" = {
         action = "oldfiles";
         options = {
           desc = "Recent";
         };
       };
-      "<leader>fb" = {
-        action = "buffers";
-        options = {
-          desc = "Buffers";
-        };
-      };
-      "<C-p>" = {
+      "<leader>gf" = {
         action = "git_files";
         options = {
           desc = "Search git files";
@@ -98,7 +80,7 @@
           desc = "Auto Commands";
         };
       };
-      "<leader>sb" = {
+      "<leader>/" = {
         action = "current_buffer_fuzzy_find";
         options = {
           desc = "Buffer";
