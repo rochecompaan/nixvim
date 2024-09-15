@@ -1,6 +1,5 @@
 { config
 , lib
-, inputs
 , pkgs
 , ...
 }: {
@@ -87,8 +86,12 @@
     extraPlugins = [
       (pkgs.vimUtils.buildVimPlugin {
         name = "markdown.nvim";
-        src = inputs.plugin-markdown;
+        src = pkgs.fetchFromGitHub {
+          owner = "MeanderingProgrammer";
+          repo = "markdown.nvim";
+        };
       })
     ];
+
   };
 }
