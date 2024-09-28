@@ -24,6 +24,7 @@
 
       # Enable text wrap
       wrap = true;
+      textwidth = 80;
 
       # Better splitting
       splitbelow = true;
@@ -53,7 +54,7 @@
       termguicolors = true;
 
       # Enable the sign column to prevent the screen from jumping
-      # signcolumn = "yes";
+      signcolumn = "yes";
 
       # Enable cursor line highlight
       cursorline = true; # Highlight the line where the cursor is located
@@ -70,7 +71,7 @@
       scrolloff = 8;
 
       # Place a column line
-      # colorcolumn = "80";
+      colorcolumn = "80";
 
       # Reduce which-key timeout to 10ms
       timeoutlen = 10;
@@ -94,6 +95,9 @@
 
       # Sync clipboard between OS and Neovim
       clipboard = "unnamedplus";
+
+      # Auto read if file changed outside of neovim
+      autoread = true;
     };
   };
 }
