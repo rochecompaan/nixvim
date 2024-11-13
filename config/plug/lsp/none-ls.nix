@@ -27,6 +27,11 @@
         prettier = {
           enable = true;
           disableTsServerFormatter = true;
+          extra_filetypes = [
+            "yml"
+            "yaml"
+            "toml"
+          ];
           settings = ''
             {
               extra_args = { "--no-semi", "--single-quote" },
@@ -34,7 +39,7 @@
           '';
         };
         stylua.enable = true;
-        yamlfmt.enable = true;
+        yamlfmt.enable = false;
       };
     };
   };
