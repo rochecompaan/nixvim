@@ -34,14 +34,7 @@
           '';
         };
         stylua.enable = true;
-        yamlfmt = {
-          enable = true;
-          settings = ''
-            {
-              extra_args = { "--config", "~/.config/yamlfmt" }
-            }
-          '';
-        };
+        yamlfmt.enable = false;
       };
     };
   };
