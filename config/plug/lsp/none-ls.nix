@@ -27,11 +27,6 @@
         prettier = {
           enable = true;
           disableTsServerFormatter = true;
-          extra_filetypes = [
-            "yml"
-            "yaml"
-            "toml"
-          ];
           settings = ''
             {
               extra_args = { "--no-semi", "--single-quote" },
