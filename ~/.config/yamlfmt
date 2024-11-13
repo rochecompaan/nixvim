@@ -1,0 +1,11 @@
+---
+line_ending: "lf"
+indent: 2
+quote_style: "double"
+quote_keys: true
+preserve_quotes: true
+sequence_style: "block"
+scanner_width: 100
+disallow_anchor: false
+include_document_start: true
+include_document_end: false
