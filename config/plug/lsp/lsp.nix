@@ -15,6 +15,15 @@
         tsserver = { enable = false; };
         yamlls = {
           enable = true;
+          settings = {
+            yaml = {
+              schemas = {};
+              validate = true;
+              hover = true;
+              completion = true;
+              lineFoldingOnly = true;
+            };
+          };
         };
       };
       keymaps = {
