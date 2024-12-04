@@ -18,9 +18,6 @@ in
   plugins.treesitter = {
     enable = true;
     folding = true;
-    indent = {
-      enable = true;
-    };
     languageRegister.nu = "nu";
     languageRegister.liq = "liquidsoap";
     nixvimInjections = true;
@@ -29,6 +26,9 @@ in
         nu-grammar
       ]
       ++ pkgs.vimPlugins.nvim-treesitter.allGrammars;
+    settings = {
+      indent.enabled = true;
+    };
   };
 
   extraFiles = {
