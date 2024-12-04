@@ -18,7 +18,9 @@ in
   plugins.treesitter = {
     enable = true;
     folding = true;
-    indent = true;
+    indent = {
+      enable = true;
+    };
     languageRegister.nu = "nu";
     languageRegister.liq = "liquidsoap";
     nixvimInjections = true;
