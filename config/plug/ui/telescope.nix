@@ -38,10 +38,34 @@
           desc = "Find project files";
         };
       };
+      "<leader>s/" = {
+        action = "telescope_live_grep_open_files";
+        options = {
+          desc = "Search in Open Files";
+        };
+      };
+      "<leader>ss" = {
+        action = "builtin";
+        options = {
+          desc = "Search Select Telescope";
+        };
+      };
+      "<leader>sw" = {
+        action = "grep_string";
+        options = {
+          desc = "Search current Word";
+        };
+      };
       "<leader>sg" = {
         action = "live_grep";
         options = {
-          desc = "Find text";
+          desc = "Search by Grep";
+        };
+      };
+      "<leader>sG" = {
+        action = ":LiveGrepGitRoot<cr>";
+        options = {
+          desc = "Search by Grep on Git Root";
         };
       };
       "<leader>sr" = {
@@ -81,9 +105,9 @@
         };
       };
       "<leader>/" = {
-        action = "current_buffer_fuzzy_find";
+        action = "function() require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ winblend = 10, previewer = false })) end";
         options = {
-          desc = "Buffer";
+          desc = "Fuzzily search in current buffer";
         };
       };
       "<leader>sc" = {
@@ -181,6 +205,45 @@
     }
   ];
   extraConfigLua = ''
+    -- Function to find the git root directory based on the current buffer's path
+    local function find_git_root()
+      local current_file = vim.api.nvim_buf_get_name(0)
+      local current_dir
+      local cwd = vim.fn.getcwd()
+      if current_file == '' then
+        current_dir = cwd
+      else
+        current_dir = vim.fn.fnamemodify(current_file, ':h')
+      end
+
+      local git_root = vim.fn.systemlist('git -C ' .. vim.fn.escape(current_dir, ' ') .. ' rev-parse --show-toplevel')[1]
+      if vim.v.shell_error ~= 0 then
+        print 'Not a git repository. Searching on current working directory'
+        return cwd
+      end
+      return git_root
+    end
+
+    -- Custom live_grep function to search in git root
+    local function live_grep_git_root()
+      local git_root = find_git_root()
+      if git_root then
+        require('telescope.builtin').live_grep {
+          search_dirs = { git_root },
+        }
+      end
+    end
+
+    -- Custom function for live grep in open files
+    local function telescope_live_grep_open_files()
+      require('telescope.builtin').live_grep {
+        grep_open_files = true,
+        prompt_title = 'Live Grep in Open Files',
+      }
+    end
+
+    vim.api.nvim_create_user_command('LiveGrepGitRoot', live_grep_git_root, {})
+
     require("telescope").setup{
       pickers = {
         colorscheme = {
