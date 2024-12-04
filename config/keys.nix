@@ -319,6 +319,53 @@
       };
     }
 
+    {
+      mode = "n";
+      key = "<leader>s";
+      action = "[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]";
+      options = {
+        silent = true;
+        desc = "Substitute word under cursor";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<A-j>";
+      action = ":m .+1<CR>==";
+      options = {
+        silent = true;
+        desc = "Move line down";
+      };
+    }
+    {
+      mode = "n";
+      key = "<A-k>";
+      action = ":m .-2<CR>==";
+      options = {
+        silent = true;
+        desc = "Move line up";
+      };
+    }
+    {
+      mode = "v";
+      key = "<A-j>";
+      action = ":m '>+1<CR>gv=gv";
+      options = {
+        silent = true;
+        desc = "Move selection down";
+      };
+    }
+    {
+      mode = "v";
+      key = "<A-k>";
+      action = ":m '<-2<CR>gv=gv";
+      options = {
+        silent = true;
+        desc = "Move selection up";
+      };
+    }
+
   ];
   extraConfigLua = ''
     function ToggleLineNumber()
