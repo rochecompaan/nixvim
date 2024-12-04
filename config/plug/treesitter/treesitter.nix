@@ -32,8 +32,12 @@ in
   };
 
   extraFiles = {
-    "/queries/nu/highlights.scm" = "${nu-grammar}/queries/nu/highlights.scm";
-    "/queries/nu/injections.scm" = "${nu-grammar}/queries/nu/injections.scm";
+    "/queries/nu/highlights.scm" = {
+      text = builtins.readFile "${nu-grammar}/queries/nu/highlights.scm";
+    };
+    "/queries/nu/injections.scm" = {
+      text = builtins.readFile "${nu-grammar}/queries/nu/injections.scm";
+    };
   };
   extraConfigLua = ''
     local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
