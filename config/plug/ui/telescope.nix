@@ -210,7 +210,7 @@
       local current_file = vim.api.nvim_buf_get_name(0)
       local current_dir
       local cwd = vim.fn.getcwd()
-      if current_file == '' then
+      if current_file == [[]] then
         current_dir = cwd
       else
         current_dir = vim.fn.fnamemodify(current_file, ':h')
