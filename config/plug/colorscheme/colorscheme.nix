@@ -10,13 +10,13 @@ in
       colorscheme = import ../../colors/${config.theme}.nix { };
     };
     gruvbox = {
-      enable = false;
+      enable = true;
       settings = {
         transparent_mode = true;
       };
     };
     tokyonight = {
-      enable = true;
+      enable = false;
       settings = {
         style = "night";
         transparent = true;
