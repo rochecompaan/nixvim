@@ -15,7 +15,14 @@
         yamllint.enable = true;
       };
       formatting = {
-        nixpkgs_fmt.enable = true;
+        nixfmt = {
+          enable = true;
+          settings = ''
+            {
+              extra_args = { "--rfc" },
+            }
+          '';
+        };
         black = {
           enable = true;
           settings = ''
