@@ -1,13 +1,14 @@
 {
   plugins.conform-nvim = {
     enable = false;
-    formatOnSave = {
-      lspFallback = true;
-      timeoutMs = 500;
+    settings = {
+      format_on_save = {
+        lspFallback = true;
+        timeoutMs = 500;
+      };
     };
     notifyOnError = true;
     formattersByFt = {
-      liquidsoap = [ "liquidsoap-prettier" ];
       html = [ [ "prettierd" "prettier" ] ];
       css = [ [ "prettierd" "prettier" ] ];
       javascript = [ [ "prettierd" "prettier" ] ];
