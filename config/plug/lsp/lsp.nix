@@ -17,7 +17,7 @@
           enable = true;
           settings = {
             yaml = {
-              schemas = {};
+              schemas = { };
               validate = true;
               hover = true;
               completion = true;
