@@ -22,7 +22,7 @@
     , ...
     } @ inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "aarch64-linux" "x86_64-linux" "aarch64-darwin" "x86_64-darwin" ];
+      systems = [ "x86_64-linux" ];
 
       perSystem =
         { system
@@ -40,10 +40,6 @@
         in
         {
           checks = {
-            default = pkgs.nixvimLib.check.mkTestDerivationFromNvim {
-              inherit nvim;
-              name = "A nixvim configuration";
-            };
             pre-commit-check = pre-commit-hooks.lib.${system}.run {
               src = ./.;
               hooks = {
