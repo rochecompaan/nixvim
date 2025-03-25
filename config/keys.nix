@@ -3,6 +3,19 @@
 
   keymaps = [
     # General maps
+
+    {
+      mode = "n";
+      key = "<Tab>";
+      action = ":bnext<CR>";
+    }
+
+    {
+      mode = "n";
+      key = "<S-Tab>";
+      action = ":bprevious<CR>";
+    }
+
     {
       mode = "n";
       key = "<leader>f";
@@ -235,7 +248,8 @@
       key = "J";
       action = "mzJ`z";
       options = {
-        desc = "Allow cursor to stay in the same place after appending to current line ";
+        desc =
+          "Allow cursor to stay in the same place after appending to current line ";
       };
     }
 
@@ -322,7 +336,7 @@
     {
       mode = "n";
       key = "<leader>s";
-      action = "[[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]";
+      action = "[[:%s/<<C-r><C-w>>/<C-r><C-w>/gI<Left><Left><Left>]";
       options = {
         silent = true;
         desc = "Substitute word under cursor";
