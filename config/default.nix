@@ -1,8 +1,4 @@
-{ config
-, lib
-, pkgs
-, ...
-}: {
+{ config, lib, pkgs, ... }: {
   imports = [
     ./autocommands.nix
     ./keys.nix
@@ -57,7 +53,18 @@
   options = {
     theme = lib.mkOption {
       default = lib.mkDefault "paradise";
-      type = lib.types.enum [ "paradise" "decay" "edge-dark" "mountain" "tokyonight" "everforest" "everblush" "jellybeans" "aquarium" "gruvbox" ];
+      type = lib.types.enum [
+        "paradise"
+        "decay"
+        "edge-dark"
+        "mountain"
+        "tokyonight"
+        "everforest"
+        "everblush"
+        "jellybeans"
+        "aquarium"
+        "gruvbox"
+      ];
     };
     assistant = lib.mkOption {
       default = "none";
@@ -82,6 +89,17 @@
     #     };
     #   })
     # ];
+    extraPlugins = [
+      (pkgs.vimUtils.buildVimPlugin {
+        name = "augment";
+        src = pkgs.fetchFromGitHub {
+          owner = "augmentcode";
+          repo = "augment.nvim";
+          rev = "97418c9dfc1918fa9bdd23863ea3d2e49130727f";
+          hash = "sha256-t/87np820kDhGN1g4MHvQDIM7q0oWWYQZru4tRkUg4s=";
+        };
+      })
+    ];
 
   };
 }
