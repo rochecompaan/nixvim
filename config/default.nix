@@ -95,7 +95,7 @@
         src = pkgs.fetchFromGitHub {
           owner = "augmentcode";
           repo = "augment.nvim";
-          rev = "97418c9dfc1918fa9bdd23863ea3d2e49130727f";
+          rev = "v0.25.1";
           hash = "sha256-t/87np820kDhGN1g4MHvQDIM7q0oWWYQZru4tRkUg4s=";
         };
       })
