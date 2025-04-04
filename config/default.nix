@@ -96,7 +96,7 @@
           owner = "augmentcode";
           repo = "augment.vim";
           rev = "v0.25.1";
-          hash = "sha256-t/87np820kDhGN1g4MHvQDIM7q0oWWYQZru4tRkUg4s=";
+          hash = "sha256-ekexQ2tI/GxEbNHhxF0fj0vwIH3+H0joSayL9vmlBOs=";
         };
       })
     ];
