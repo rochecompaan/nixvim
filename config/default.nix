@@ -36,6 +36,7 @@
     ./plug/ui/btw.nix
     ./plug/ui/indent-blankline.nix
     ./plug/ui/telescope.nix
+    ./plug/ui/web-devicons.nix
 
     ./plug/utils/harpoon.nix
     ./plug/utils/auto-session.nix
