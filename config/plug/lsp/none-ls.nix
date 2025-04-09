@@ -1,7 +1,7 @@
 {
   plugins.none-ls = {
     enable = true;
-    enableLspFormat = true;
+    enableLspFormat = false;
     settings = {
       updateInInsert = false;
     };
@@ -15,14 +15,7 @@
         yamllint.enable = true;
       };
       formatting = {
-        nixfmt = {
-          enable = true;
-          settings = ''
-            {
-              extra_args = { "--rfc" },
-            }
-          '';
-        };
+        nixpkgs_fmt.enable = true;
         black = {
           enable = true;
           settings = ''
