@@ -24,6 +24,29 @@
         "_" = [ "trim_whitespace" ];
       };
       notify_on_error = true;
+
+      # Add the formatters section with custom configuration
+      formatters = {
+        black = {
+          command = ""; # Will be set by the Lua function
+        };
+      };
     };
   };
+
+  extraConfigLua = ''
+    -- Function to get command from virtual environment if available
+    local function get_venv_command(command)
+      if vim.env.VIRTUAL_ENV then
+        return vim.env.VIRTUAL_ENV .. "/bin/" .. command
+      else
+        return command
+      end
+    end
+
+    -- Configure formatters to use virtual environment when available
+    require('conform').formatters.black = {
+      command = get_venv_command("black")
+    }
+  '';
 }
