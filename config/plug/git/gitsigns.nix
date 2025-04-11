@@ -56,6 +56,51 @@
     }
     {
       mode = "n";
+      key = "[c";
+      action = ":Gitsigns prev_hunk<CR>";
+      options = {
+        silent = true;
+        desc = "Jump to previous hunk";
+      };
+    }
+    {
+      mode = "n";
+      key = "]c";
+      action = ":Gitsigns next_hunk<CR>";
+      options = {
+        silent = true;
+        desc = "Jump to next hunk";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>ghp";
+      action = ":Gitsigns preview_hunk<CR>";
+      options = {
+        silent = true;
+        desc = "Preview hunk";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>ghs";
+      action = ":Gitsigns stage_hunk<CR>";
+      options = {
+        silent = true;
+        desc = "Stage hunk";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>ghr";
+      action = ":Gitsigns reset_hunk<CR>";
+      options = {
+        silent = true;
+        desc = "Reset hunk";
+      };
+    }
+    {
+      mode = "n";
       key = "<leader>ghR";
       action = ":Gitsigns reset_buffer<CR>";
       options = {
