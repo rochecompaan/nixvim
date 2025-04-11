@@ -231,14 +231,14 @@
 
     {
       mode = "v";
-      key = "J";
+      key = "<C-j>";
       action = ":m '>+1<CR>gv=gv";
       options = { desc = "Use move command when line is highlighted "; };
     }
 
     {
       mode = "v";
-      key = "K";
+      key = "<C-k>";
       action = ":m '>-2<CR>gv=gv";
       options = { desc = "Use move command when line is highlighted "; };
     }
