@@ -75,32 +75,5 @@
   config = {
     # The base16 theme to use, if you want to use another theme, change it in colorscheme.nix
     theme = "gruvbox";
-    # extraConfigLua = ''
-    #   _G.theme = "${config.theme}";
-    #   require('render-markdown').setup({});
-    # '';
-    # extraPlugins = [
-    #   (pkgs.vimUtils.buildVimPlugin {
-    #     name = "markdown.nvim";
-    #     src = pkgs.fetchFromGitHub {
-    #       owner = "MeanderingProgrammer";
-    #       repo = "markdown.nvim";
-    #       rev = "HEAD";
-    #       hash = "sha256-BhITxvogH5hHO5m1SGNP1sT/jMjaQ0uNqg2ScsyZ/pU=";
-    #     };
-    #   })
-    # ];
-    extraPlugins = [
-      (pkgs.vimUtils.buildVimPlugin {
-        name = "augment";
-        src = pkgs.fetchFromGitHub {
-          owner = "augmentcode";
-          repo = "augment.vim";
-          rev = "v0.25.1";
-          hash = "sha256-ekexQ2tI/GxEbNHhxF0fj0vwIH3+H0joSayL9vmlBOs=";
-        };
-      })
-    ];
-
   };
 }
