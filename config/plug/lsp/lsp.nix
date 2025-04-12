@@ -14,7 +14,7 @@
         pyright = { enable = true; };
         gopls = { enable = true; };
         terraformls = { enable = true; };
-        ts_ls = { enable = false; };
+        ts_ls = { enable = true; };
         yamlls = {
           enable = true;
           settings = {
