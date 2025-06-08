@@ -1,11 +1,11 @@
 {
-  description = "Elyth's NeoVim configuration";
+  description = "Roché's NeoVim configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-24.11";
+      url = "github:nix-community/nixvim/nixos-25.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pre-commit-hooks = {
