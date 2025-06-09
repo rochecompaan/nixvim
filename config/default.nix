@@ -44,6 +44,7 @@
     ./plug/utils/hardtime.nix
     ./plug/utils/harpoon.nix
     ./plug/utils/illuminate.nix
+    ./plug/utils/image.nix
     ./plug/utils/mini.nix
     ./plug/utils/nvim-autopairs.nix
     ./plug/utils/obsidian.nix
