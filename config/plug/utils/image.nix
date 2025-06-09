@@ -3,7 +3,7 @@
     enable = true;
     settings = {
       backend = "kitty";
-      max_height = 12;
+      max_height = 40;
       max_height_window_percentage = {
         __raw = "math.huge";
       };
