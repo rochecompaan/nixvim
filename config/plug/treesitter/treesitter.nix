@@ -14,7 +14,7 @@
     "/queries/yaml/injections.scm" = {
       text = ''
         (block_mapping_pair
-          key: (plain_scalar) @key-name
+          key: (_ @key-name)
           value: (block_sequence
             (block_sequence_item (plain_scalar) @cmd-val)
             (block_sequence_item (plain_scalar) @arg-val)
