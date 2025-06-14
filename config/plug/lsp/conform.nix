@@ -15,7 +15,7 @@
         typescriptreact = [ "prettierd" "prettier" ];
         python = [ "black" ];
         lua = [ "stylua" ];
-        nix = [ "nixpkgs-fmt" ];
+        nix = [ "nixfmt-rfc-style" ];
         markdown = [ "prettierd" "prettier" ];
         yaml = [ "yamllint" "yamlfmt" ];
         "*" = [ "codespell" ];
