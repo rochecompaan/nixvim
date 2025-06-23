@@ -40,7 +40,6 @@
 
     ./plug/utils/auto-session.nix
     ./plug/utils/comment.nix
-    ./plug/utils/diagram.nix
     ./plug/utils/hardtime.nix
     ./plug/utils/harpoon.nix
     ./plug/utils/illuminate.nix

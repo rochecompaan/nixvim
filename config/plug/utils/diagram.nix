@@ -1,5 +1,0 @@
-{
-  plugins.diagram = {
-    enable = true;
-  };
-}
