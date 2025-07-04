@@ -41,6 +41,26 @@
     }
 
     {
+      mode = [ "n" "v" ];
+      key = "<leader>go";
+      action = "<cmd>lua GitLink(true)<CR>";
+      options = {
+        silent = true;
+        desc = "Git: Open in remote";
+      };
+    }
+
+    {
+      mode = [ "n" "v" ];
+      key = "<leader>gy";
+      action = "<cmd>lua GitLink(false)<CR>";
+      options = {
+        silent = true;
+        desc = "Git: Yank link";
+      };
+    }
+
+    {
       mode = "n";
       key = "<leader>u";
       action = "+ui";
@@ -174,7 +194,7 @@
       action = "<C-W>j";
       options = {
         silent = true;
-        desc = "Move to window bellow";
+        desc = "Move to window below";
       };
     }
 
@@ -388,20 +408,38 @@
     else
       vim.wo.number = true
         vim.wo.relativenumber = false
-        end
-        end
+      end
+    end
 
-        function ToggleRelativeLineNumber()
-        if vim.wo.relativenumber then
-          vim.wo.relativenumber = false
+    function ToggleRelativeLineNumber()
+    if vim.wo.relativenumber then
+      vim.wo.relativenumber = false
+    else
+      vim.wo.relativenumber = true
+        vim.wo.number = false
+      end
+    end
+
+    function ToggleWrap()
+      vim.wo.wrap = not vim.wo.wrap
+    end
+
+    function GitLink(open)
+      local gitlinker = require("gitlinker")
+      local mode = vim.api.nvim_get_mode().mode
+      if mode == "n" then
+        if open then
+          gitlinker.get_buf_range_url("n", { action = "open" })
         else
-          vim.wo.relativenumber = true
-            vim.wo.number = false
-            end
-            end
-
-            function ToggleWrap()
-            vim.wo.wrap = not vim.wo.wrap
-            end
+          gitlinker.get_buf_range_url("n", { action = "copy" })
+        end
+      elseif mode == "v" or mode == "V" then
+        if open then
+          gitlinker.get_buf_range_url("v", { action = "open" })
+        else
+          gitlinker.get_buf_range_url("v", { action = "copy" })
+        end
+      end
+    end
   '';
 }
