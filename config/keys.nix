@@ -41,6 +41,46 @@
     }
 
     {
+      mode = [ "n" "v" ];
+      key = "<leader>gy";
+      action = "<cmd>lua require('gitlinker').get_buf_range_url()<CR>";
+      options = {
+        silent = true;
+        desc = "Git: Yank link";
+      };
+    }
+
+    {
+      mode = [ "n" "v" ];
+      key = "<leader>go";
+      action = "<cmd>lua require('gitlinker').get_buf_range_url('n', {action_callback = require'gitlinker.actions'.open_in_browser})<CR>";
+      options = {
+        silent = true;
+        desc = "Git: Open in remote";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>gY";
+      action = "<cmd>lua require('gitlinker').get_repo_url()<CR>";
+      options = {
+        silent = true;
+        desc = "Git: Yank repo URL";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>gB";
+      action = "<cmd>lua require('gitlinker').get_repo_url({action_callback = require'gitlinker.actions'.open_in_browser})<CR>";
+      options = {
+        silent = true;
+        desc = "Git: Open repo in browser";
+      };
+    }
+
+    {
       mode = "n";
       key = "<leader>u";
       action = "+ui";
