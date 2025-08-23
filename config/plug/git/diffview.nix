@@ -1,5 +1,5 @@
 {
-  plugins.fugitive = {
+  plugins.diffview = {
     enable = true;
   };
 }
