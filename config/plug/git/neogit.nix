@@ -17,29 +17,6 @@
       preview_buffer = {
         kind = "floating";
       };
-      sections = {
-        recent = {
-          folded = true;
-        };
-        staged = {
-          folded = false;
-        };
-        stashes = {
-          folded = true;
-        };
-        unmerged = {
-          folded = true;
-        };
-        unpulled = {
-          folded = false;
-        };
-        unstaged = {
-          folded = false;
-        };
-        untracked = {
-          folded = false;
-        };
-      };
     };
   };
 
