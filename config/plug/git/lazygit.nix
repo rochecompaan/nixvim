@@ -1,6 +1,9 @@
 {
   plugins.lazygit = {
     enable = true;
+    settings = {
+      use_neovim_remote = true;
+    };
   };
 
   extraConfigLua = ''
