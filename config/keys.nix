@@ -366,7 +366,7 @@
     {
       mode = "n";
       key = "<leader>y";
-      action = ":let @+=expand('%')<CR>";
+      action = "<cmd>let @+ = expand('%:.')<CR>";
       options = {
         silent = true;
         desc = "Yank relative file path";
