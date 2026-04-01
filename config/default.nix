@@ -14,6 +14,7 @@
     ./plug/completion/schemastore.nix
 
     ./plug/git/fugitive.nix
+    ./plug/git/gh.nix
     ./plug/git/gitlinker.nix
     ./plug/git/gitsigns.nix
     ./plug/git/lazygit.nix
