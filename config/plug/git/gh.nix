@@ -25,26 +25,30 @@
     require("litee.gh").setup({
       map_resize_keys = false,
     })
+
+    local ok, wk = pcall(require, "which-key")
+    if ok then
+      wk.add({
+        { "<leader>gH", group = "GitHub" },
+        { "<leader>gHc", group = "Commits" },
+        { "<leader>gHi", group = "Issues" },
+        { "<leader>gHl", group = "Litee" },
+        { "<leader>gHp", group = "Pull requests" },
+        { "<leader>gHr", group = "Review" },
+        { "<leader>gHt", group = "Threads" },
+      })
+    end
   '';
 
   keymaps = [
     {
       mode = "n";
-      key = "<leader>gH";
-      action = "+github";
-    }
-    {
-      mode = "n";
-      key = "<leader>gHt";
+      key = "<leader>gHlt";
       action = "<cmd>LTPanel<CR>";
       options = {
         desc = "Toggle Litee panel";
+        silent = true;
       };
-    }
-    {
-      mode = "n";
-      key = "<leader>gHc";
-      action = "+github commits";
     }
     {
       mode = "n";
@@ -52,6 +56,7 @@
       action = "<cmd>GHCloseCommit<CR>";
       options = {
         desc = "Close commit";
+        silent = true;
       };
     }
     {
@@ -60,6 +65,7 @@
       action = "<cmd>GHExpandCommit<CR>";
       options = {
         desc = "Expand commit";
+        silent = true;
       };
     }
     {
@@ -68,6 +74,7 @@
       action = "<cmd>GHOpenToCommit<CR>";
       options = {
         desc = "Open to commit";
+        silent = true;
       };
     }
     {
@@ -76,6 +83,7 @@
       action = "<cmd>GHPopOutCommit<CR>";
       options = {
         desc = "Pop out commit";
+        silent = true;
       };
     }
     {
@@ -84,25 +92,17 @@
       action = "<cmd>GHCollapseCommit<CR>";
       options = {
         desc = "Collapse commit";
+        silent = true;
       };
     }
     {
       mode = "n";
-      key = "<leader>gHp";
-      action = "+github pull requests";
-    }
-    {
-      mode = "n";
-      key = "<leader>gHpo";
-      action = "<cmd>GHOpenPR<CR>";
+      key = "<leader>gHio";
+      action = "<cmd>GHOpenIssue<CR>";
       options = {
-        desc = "Open pull requests";
+        desc = "Open issue";
+        silent = true;
       };
-    }
-    {
-      mode = "n";
-      key = "<leader>gHi";
-      action = "+github issues";
     }
     {
       mode = "n";
@@ -110,6 +110,43 @@
       action = "<cmd>GHPreviewIssue<CR>";
       options = {
         desc = "Preview issue";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>gHis";
+      action = "<cmd>GHSearchIssues<CR>";
+      options = {
+        desc = "Search issues";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>gHn";
+      action = "<cmd>GHNotifications<CR>";
+      options = {
+        desc = "Open notifications";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>gHw";
+      action = "<cmd>GHViewWeb<CR>";
+      options = {
+        desc = "Open in browser";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>gHpo";
+      action = "<cmd>GHOpenPR<CR>";
+      options = {
+        desc = "Open pull request";
+        silent = true;
       };
     }
     {
@@ -118,6 +155,7 @@
       action = "<cmd>GHClosePR<CR>";
       options = {
         desc = "Close PR";
+        silent = true;
       };
     }
     {
@@ -126,6 +164,7 @@
       action = "<cmd>GHPRDetails<CR>";
       options = {
         desc = "PR details";
+        silent = true;
       };
     }
     {
@@ -134,6 +173,7 @@
       action = "<cmd>GHExpandPR<CR>";
       options = {
         desc = "Expand PR";
+        silent = true;
       };
     }
     {
@@ -142,6 +182,7 @@
       action = "<cmd>GHPopOutPR<CR>";
       options = {
         desc = "Pop out PR";
+        silent = true;
       };
     }
     {
@@ -150,6 +191,16 @@
       action = "<cmd>GHRefreshPR<CR>";
       options = {
         desc = "Refresh PR";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>gHps";
+      action = "<cmd>GHSearchPRs<CR>";
+      options = {
+        desc = "Search pull requests";
+        silent = true;
       };
     }
     {
@@ -158,6 +209,7 @@
       action = "<cmd>GHOpenToPR<CR>";
       options = {
         desc = "Open to PR";
+        silent = true;
       };
     }
     {
@@ -166,12 +218,8 @@
       action = "<cmd>GHCollapsePR<CR>";
       options = {
         desc = "Collapse PR";
+        silent = true;
       };
-    }
-    {
-      mode = "n";
-      key = "<leader>gHr";
-      action = "+github review";
     }
     {
       mode = "n";
@@ -179,6 +227,16 @@
       action = "<cmd>GHStartReview<CR>";
       options = {
         desc = "Start review";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>gHra";
+      action = "<cmd>GHApproveReview<CR>";
+      options = {
+        desc = "Approve review";
+        silent = true;
       };
     }
     {
@@ -187,6 +245,7 @@
       action = "<cmd>GHCloseReview<CR>";
       options = {
         desc = "Close review";
+        silent = true;
       };
     }
     {
@@ -195,6 +254,7 @@
       action = "<cmd>GHDeleteReview<CR>";
       options = {
         desc = "Delete review";
+        silent = true;
       };
     }
     {
@@ -203,6 +263,7 @@
       action = "<cmd>GHExpandReview<CR>";
       options = {
         desc = "Expand review";
+        silent = true;
       };
     }
     {
@@ -211,6 +272,7 @@
       action = "<cmd>GHSubmitReview<CR>";
       options = {
         desc = "Submit review";
+        silent = true;
       };
     }
     {
@@ -219,35 +281,34 @@
       action = "<cmd>GHCollapseReview<CR>";
       options = {
         desc = "Collapse review";
+        silent = true;
       };
     }
     {
       mode = "n";
-      key = "<leader>gHT";
-      action = "+github threads";
-    }
-    {
-      mode = "n";
-      key = "<leader>gHTc";
+      key = "<leader>gHtc";
       action = "<cmd>GHCreateThread<CR>";
       options = {
         desc = "Create thread";
+        silent = true;
       };
     }
     {
       mode = "n";
-      key = "<leader>gHTn";
+      key = "<leader>gHtn";
       action = "<cmd>GHNextThread<CR>";
       options = {
         desc = "Next thread";
+        silent = true;
       };
     }
     {
       mode = "n";
-      key = "<leader>gHTt";
-      action = "<cmd>GHToggleThread<CR>";
+      key = "<leader>gHtt";
+      action = "<cmd>GHToggleThreads<CR>";
       options = {
-        desc = "Toggle thread";
+        desc = "Toggle threads";
+        silent = true;
       };
     }
   ];
