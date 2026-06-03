@@ -13,6 +13,7 @@
     ./plug/completion/lspkind.nix
     ./plug/completion/schemastore.nix
 
+    ./plug/git/diffview.nix
     ./plug/git/fugitive.nix
     ./plug/git/gh.nix
     ./plug/git/gitlinker.nix
