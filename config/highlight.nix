@@ -105,6 +105,49 @@ in
         bg = "none";
       };
 
+      # Gruvbox-friendly diff backgrounds. Keep syntax foreground colors readable
+      # while still giving add/change/delete lines a subtle visual tint.
+      DiffAdd = {
+        fg = "none";
+        bg = "#2a3328";
+      };
+      DiffChange = {
+        fg = "none";
+        bg = "#32302a";
+      };
+      DiffDelete = {
+        fg = "none";
+        bg = "#382626";
+      };
+      DiffText = {
+        fg = "none";
+        bg = "#3c3836";
+      };
+      DiffviewDiffAdd = {
+        fg = "none";
+        bg = "#2a3328";
+      };
+      DiffviewDiffAddAsDelete = {
+        fg = "none";
+        bg = "#382626";
+      };
+      DiffviewDiffChange = {
+        fg = "none";
+        bg = "#32302a";
+      };
+      DiffviewDiffDelete = {
+        fg = colors.base03;
+        bg = "#382626";
+      };
+      DiffviewDiffDeleteDim = {
+        fg = colors.base03;
+        bg = "#382626";
+      };
+      DiffviewDiffText = {
+        fg = "none";
+        bg = "#3c3836";
+      };
+
       NoiceCmdlinePopup = {
         fg = colors.base04;
         bg = colors.base01;
