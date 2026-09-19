@@ -116,6 +116,27 @@
       action = "+test";
     }
 
+    # Markdown preview
+    {
+      mode = "n";
+      key = "<leader>mp";
+      action = "<cmd>LivePreview start<CR>";
+      options = {
+        silent = true;
+        desc = "Markdown: Preview in browser";
+      };
+    }
+
+    {
+      mode = "n";
+      key = "<leader>ms";
+      action = "<cmd>LivePreview close<CR>";
+      options = {
+        silent = true;
+        desc = "Markdown: Stop preview";
+      };
+    }
+
     # Tabs
     {
       mode = "n";
