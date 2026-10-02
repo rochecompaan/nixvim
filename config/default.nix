@@ -9,7 +9,6 @@
     ./plug/colorscheme/colorscheme.nix
 
     ./plug/completion/cmp.nix
-    ./plug/completion/copilot-cmp.nix
     ./plug/completion/lspkind.nix
     ./plug/completion/schemastore.nix
 
@@ -71,10 +70,6 @@
         "aquarium"
         "gruvbox"
       ];
-    };
-    assistant = lib.mkOption {
-      default = "none";
-      type = lib.types.enum [ "copilot" "none" ];
     };
   };
   config = {
