@@ -15,8 +15,21 @@
   ];
 
   extraConfigLua = ''
-    require('livepreview.config').set({
+    local preview = require('livepreview')
+    local preview_config = require('livepreview.config')
+    preview_config.set({
       dynamic_root = true,
     })
+
+    local start_preview = preview.start
+    preview.start = function(filepath)
+      -- Bind port 0 so the OS reserves a free port for this preview.
+      local started = start_preview(filepath, 0)
+      if started then
+        -- Update in place: the command uses this table to build the browser URL.
+        preview_config.config.port = preview.serverObj.server:getsockname().port
+      end
+      return started
+    end
   '';
 }

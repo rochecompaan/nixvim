@@ -40,6 +40,22 @@
         in
         {
           checks = {
+            live-preview =
+              let
+                previewNvim = nixvim'.makeNixvimWithModule {
+                  inherit pkgs;
+                  module = ./config/plug/utils/live-preview.nix;
+                };
+              in
+              pkgs.runCommand "live-preview-regression"
+                {
+                  nativeBuildInputs = [ pkgs.python3 ];
+                  NVIM_BIN = "${previewNvim}/bin/nvim";
+                } ''
+                python3 ${./tests/live-preview.py}
+                touch "$out"
+              '';
+
             pre-commit-check = pre-commit-hooks.lib.${system}.run {
               src = ./.;
               hooks = {
