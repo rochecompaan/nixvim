@@ -1,4 +1,6 @@
 {
+  dependencies.lazygit.enable = false;
+
   plugins.lazygit = {
     enable = true;
   };
